@@ -667,7 +667,7 @@ void main()
   fragColor = texture(image, texCoord_interp);
 }
 '''
-if __main__ == 'color_picker':
+if __main__.split('.')[-1] == 'color_picker':
     IMG_VS = '''
       uniform mat4 ModelViewProjectionMatrix;
       in vec2 texco;

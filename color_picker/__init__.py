@@ -16,14 +16,14 @@ bl_info = {
     "name": "ColorPicker",
     "author": "J. Fran Matheu (@jfranmatheu)",
     "description": "",
-    "blender": (4, 1, 0),
-    "version": (1, 2, 3),
+    "blender": (5, 3, 0),
+    "version": (1, 3, 0),
     "location": "3D Viewport > Paint tab in sidebar (Texture/Vertex/Weight paint)",
     "warning": "",
     "category": "Interface"
 }
 
-if __package__ != "color_picker":
+if __package__.split(".")[-1] != "color_picker":
     print("WARNING: ColorPicker addon's folder should be named 'color_picker'")
     assert Exception(
         "ColorPicker addon's folder should be named 'color_picker'")

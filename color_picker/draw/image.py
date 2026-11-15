@@ -1,7 +1,6 @@
 # ATTENTION!! DEPRECATED!!!!!!
 from .. gl_fun import bat, DrawBlend, Bind
 from .. gpu_sh import Shader2D, ShaderType
-from bgl import glActiveTexture, glBindTexture, GL_TEXTURE_2D, GL_TEXTURE0
 
 
 img_shader = Shader2D.IMAGE()
@@ -14,8 +13,7 @@ def verts(p, s):
 
 def Draw_Image(_p, _s, _i, shader=img_shader):
     b = bat(shader, ShaderType.TRIFAN(), {'pos':verts(_p, _s), 'texCoord':tex_coord})
-    glActiveTexture(GL_TEXTURE0)
-    glBindTexture(GL_TEXTURE_2D, _i)
-    Bind(s)
-    shader.uniform_int("image", 0) # gg
-    DrawBlend(s)
+    # bgl was removed in Blender 5.0: _i must be a gpu.types.GPUTexture.
+    shader.bind()
+    shader.uniform_sampler("image", _i)
+    DrawBlend(b, shader)

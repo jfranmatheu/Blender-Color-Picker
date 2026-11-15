@@ -1,6 +1,5 @@
 # ATTENTION!! DEPRECATED!!!!!!
 co = 'color'; op = 'o'; pos = 'pos'
-from bgl import *
 from gpu_extras.presets import *
 from gpu_extras.batch import batch_for_shader as batch
 from . gpu_sh import ShaderType as SType,Shader2D,Shader3D,SH,ShaderGeom as SGeom

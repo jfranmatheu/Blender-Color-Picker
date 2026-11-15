@@ -1,4 +1,4 @@
-libcode="""
+libcode=r"""
 vec3 RGB2Lab(in vec3 rgb){
     float R = rgb.x;
     float G = rgb.y;
@@ -49,7 +49,7 @@ void main(void){
     //gl_FragColor = vec4(uv.x, uv.y, 1.0, 1.0);
 }
 """
-color_conv="""
+color_conv=r"""
 // ================================================================================================
 // 
 // This file is part of the CAMPVis Software Framework.

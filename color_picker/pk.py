@@ -41,7 +41,8 @@ class Colpk(object):
             self.finish(context)
             return {'FINISHED'}
         self.brush = brush
-        self.ups = context.tool_settings.unified_paint_settings
+        # Blender 5.0+: unified settings live on each Paint mode.
+        self.ups = getattr(self.paint, 'unified_paint_settings', None) or context.tool_settings.unified_paint_settings
         self.size = brush.size if not self.ups.use_unified_size else self.ups.size
         self.strength = brush.strength if not self.ups.use_unified_strength else self.ups.strength
         from . km import get_keyitem

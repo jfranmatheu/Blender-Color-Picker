@@ -1,5 +1,76 @@
 from gpu.shader import from_builtin#, code_from_builtin # NOTE: Exposes the internal shader code for query.
-from gpu.types import GPUShader as Shader
+import re
+import gpu
+
+
+# Blender 5.0 removed the legacy `GPUShader(vertexcode, fragcode)` constructor.
+# This adapter keeps the original GLSL sources (with `uniform`/`in`/`out`
+# declarations) and converts them into a `GPUShaderCreateInfo` based shader.
+_GLSL_TYPES = {
+    'float': 'FLOAT', 'int': 'INT', 'bool': 'BOOL', 'uint': 'UINT',
+    'vec2': 'VEC2', 'vec3': 'VEC3', 'vec4': 'VEC4',
+    'ivec2': 'IVEC2', 'ivec3': 'IVEC3', 'ivec4': 'IVEC4',
+    'mat3': 'MAT3', 'mat4': 'MAT4',
+}
+_DECL_RE = re.compile(r'^[ \t]*(uniform|in|out)[ \t]+(\w+)[ \t]+(\w+)[ \t]*;[ \t]*$', re.M)
+
+
+def _extract(code: str):
+    decls = [(m.group(1), m.group(2), m.group(3)) for m in _DECL_RE.finditer(code)]
+    return decls, _DECL_RE.sub('', code)
+
+
+def Shader(vertexcode: str, fragcode: str, libcode: str = None, name: str = 'ColorPicker'):
+    vs_decls, vs_src = _extract(vertexcode)
+    fs_decls, fs_src = _extract(fragcode)
+    if libcode:
+        fs_src = libcode + '\n' + fs_src
+
+    info = gpu.types.GPUShaderCreateInfo()
+    iface = None
+    added_uniforms = set()
+    sampler_slot = 0
+    vert_in_slot = 0
+    frag_out_slot = 0
+    push_constants = []
+
+    def add_uniform(t, n):
+        nonlocal sampler_slot
+        if n in added_uniforms:
+            return
+        added_uniforms.add(n)
+        if t == 'sampler2D':
+            info.sampler(sampler_slot, 'FLOAT_2D', n)
+            sampler_slot += 1
+        else:
+            push_constants.append((t, n))
+
+    for q, t, n in vs_decls:
+        if q == 'uniform':
+            add_uniform(t, n)
+        elif q == 'in':
+            info.vertex_in(vert_in_slot, _GLSL_TYPES[t], n)
+            vert_in_slot += 1
+        elif q == 'out':
+            if iface is None:
+                iface = gpu.types.GPUStageInterfaceInfo(name + '_iface')
+            iface.smooth(_GLSL_TYPES[t], n)
+    for q, t, n in fs_decls:
+        if q == 'uniform':
+            add_uniform(t, n)
+        elif q == 'out':
+            info.fragment_out(frag_out_slot, _GLSL_TYPES[t], n)
+            frag_out_slot += 1
+        # 'in' variables come from the stage interface declared by the VS.
+    # Largest first to avoid std140-like padding (128 bytes push-constant budget).
+    _size = {'mat4': 64, 'mat3': 48, 'vec4': 16, 'ivec4': 16, 'vec3': 12, 'ivec3': 12, 'vec2': 8, 'ivec2': 8}
+    for t, n in sorted(push_constants, key=lambda tn: -_size.get(tn[0], 4)):
+        info.push_constant(_GLSL_TYPES[t], n)
+    if iface is not None:
+        info.vertex_out(iface)
+    info.vertex_source(vs_src)
+    info.fragment_source(fs_src)
+    return gpu.shader.create_from_info(info)
 from . libcode import *
 from enum import Enum
 
