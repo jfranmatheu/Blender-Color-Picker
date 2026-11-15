@@ -3,6 +3,7 @@ from bpy.props import StringProperty, FloatProperty, FloatVectorProperty, BoolPr
 from . data import copktype
 from . km import get_keyitem, get_keyitem_mode, modes
 panel_layout = "lay" + "out"
+SUPPORT_URL = "https://superhivemarket.com/products/color-picker"
 
 
 def get_prefs(context):
@@ -42,6 +43,17 @@ class ColorPickerPreferences(AddonPreferences):
 
         #teg_data = scn.color_picker_teg
         #color_picker = teg_data.color_picker
+
+        if isinstance(self, AddonPreferences):
+            fund = layout.box()
+            fund.label(text="Support the Development", icon='FUND')
+            col = fund.column(align=True)
+            col.label(text="Thanks to your support, Color Picker stays open, free and public.")
+            col.label(text="If it saves you time, consider buying it on Superhive.")
+            row = fund.row()
+            row.scale_y = 1.6
+            row.operator('wm.url_open', text="Development Fund ♥", icon='FUND').url = SUPPORT_URL
+            layout.separator()
 
         settings = layout.column(align=True)
         header = settings.box()
