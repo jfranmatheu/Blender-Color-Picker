@@ -1,5 +1,19 @@
 # Color Picker
 
+<div align="center">
+
+## ❤️ Support the developer
+
+### Thanks to your support, Color Picker stays **open, free and public**.<br>If it saves you time, please consider **buying it on Superhive**: every purchase directly funds its development and future Blender updates.
+
+<a href="https://superhivemarket.com/products/color-picker"><img src="https://img.shields.io/badge/Support%20the%20developer-Buy%20on%20Superhive-ff6a00?style=for-the-badge&logo=blender&logoColor=white" alt="Buy Color Picker on Superhive" width="520"></a>
+
+**👉 [superhivemarket.com/products/color-picker](https://superhivemarket.com/products/color-picker) 👈**
+
+</div>
+
+---
+
 A quick color picker for Blender's paint modes. Press a hotkey in the 3D Viewport and a compact picker opens under your mouse, so you can change the brush color or weight without going to the tool header or the sidebar.
 
 It works in **Texture Paint**, **Vertex Paint** and **Weight Paint**.
