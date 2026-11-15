@@ -1,5 +1,5 @@
 from bpy.types import AddonPreferences
-from bpy.props import StringProperty, FloatVectorProperty, BoolProperty, BoolVectorProperty, EnumProperty, IntVectorProperty, IntProperty
+from bpy.props import StringProperty, FloatProperty, FloatVectorProperty, BoolProperty, BoolVectorProperty, EnumProperty, IntVectorProperty, IntProperty
 from . data import copktype
 from . km import get_keyitem, get_keyitem_mode, modes
 panel_layout = "lay" + "out"
@@ -24,6 +24,9 @@ class ColorPickerPreferences(AddonPreferences):
     )
     color_picker_use_slice: BoolProperty(
         default=False, name="Slice Color Picker")
+
+    scale: FloatProperty(name="Scale Factor", min=0.5, max=2, default=1,
+                         description="Size multiplier for the picker, on top of the Screen DPI")
 
     screen_dpi: IntProperty(default=72, min=72, max=300, name="Screen DPI",
                             description="The greater this value is, the greater the size of the text and widget will be :-)")

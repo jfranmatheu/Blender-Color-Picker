@@ -78,6 +78,7 @@ The settings are in the 3D Viewport sidebar (`N`), under *Paint > Color Picker*,
 | Keymap | The key that opens the picker (`Space` by default). You can set it separately for each paint mode. |
 | Close on Hot-key Release | When on, the picker closes as soon as you release the key. When off, it stays open until you press the key again, click outside it, or press `Esc`. |
 | Screen DPI | Scales the picker's text and widgets. Raise it on high-resolution screens. |
+| Scale Factor | Extra size multiplier for the picker (0.5–2), applied on top of Screen DPI. Only in the add-on's preferences. |
 | Show Hex | Shows the color's hex code in the picker. |
 
 ## License
