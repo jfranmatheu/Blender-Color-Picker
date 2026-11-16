@@ -1,35 +1,29 @@
 # Color Picker
 
+![Color Picker for Blender](docs/images/cover.png)
+
 <div align="center">
 
-## ❤️ Support the developer
-
-### Thanks to your support, Color Picker stays **open, free and public**.<br>If it saves you time, please consider **buying it on Superhive**: every purchase directly funds its development and future Blender updates.
-
-<a href="https://superhivemarket.com/products/color-picker"><img src="https://img.shields.io/badge/Support%20the%20developer-Buy%20on%20Superhive-ff6a00?style=for-the-badge&logo=blender&logoColor=white" alt="Buy Color Picker on Superhive" width="520"></a>
-
-**👉 [superhivemarket.com/products/color-picker](https://superhivemarket.com/products/color-picker) 👈**
+**[⬇️ Download the latest release](https://github.com/jfranmatheu/Blender-Color-Picker/releases/latest)** · **[❤️ Support the developer](#️-support-the-developer)**
 
 </div>
 
----
-
 A quick color picker for Blender's paint modes. Press a hotkey in the 3D Viewport and a compact picker opens under your mouse, so you can change the brush color or weight without going to the tool header or the sidebar.
 
-It works in **Texture Paint**, **Vertex Paint** and **Weight Paint**.
-
-![SV Square color picker](docs/images/sv_square.png)
+It works in **Texture Paint**, **Vertex Paint** and **Weight Paint**, and it is **free and open source** (GPL-3.0).
 
 ## Installation
 
 **Blender 5.0 and newer** (tested in 5.3):
 
-1. Download `ColorPicker_v1.3.0_(Blender_5.3).zip` from the [`releases`](releases) folder.
+1. Download the zip from the **[latest release](https://github.com/jfranmatheu/Blender-Color-Picker/releases/latest)**.
 2. In Blender, go to *Edit > Preferences > Get Extensions*, open the menu in the top-right corner and choose *Install from Disk…*, then select the zip. You can also drag and drop the zip into Blender.
 
-Older builds for Blender 2.93, 3.x and 4.x are also in the [`releases`](releases) folder.
+Older builds for Blender 2.93, 3.x and 4.x are in the [`releases`](releases) folder.
 
 ## Usage
+
+![Made for painting fast](docs/images/features.png)
 
 1. Enter Texture Paint, Vertex Paint or Weight Paint mode.
 2. Hover over the 3D Viewport and **hold `Space`**. The picker opens under your mouse.
@@ -42,6 +36,8 @@ The picker edits the same color Blender's brush uses. If *Unified Color* is on, 
 
 ## Picker layouts
 
+![Three picker layouts](docs/images/layouts.png)
+
 Choose a layout under *Color Picker Type* in the settings (see [Settings](#settings)). Every layout has the same panel on the right:
 
 - **Color preview** at the top.
@@ -50,41 +46,19 @@ Choose a layout under *Color Picker Type* in the settings (see [Settings](#setti
 
 Every slider shows a live gradient of the colors you would get by moving it, so you can see the result before you drag.
 
-### SV Square
-
-A square where the horizontal axis is **saturation** and the vertical axis is **value** (brightness). Use the H slider to change the hue. This is the default layout.
-
-![SV Square](docs/images/sv_square.png)
-
-### SV+H Square & Ring
-
-The same saturation/value square, inside a **hue ring**. Drag around the ring to change the hue and inside the square to set saturation and value, all without using the sliders.
-
-![SV+H Square and Ring](docs/images/sv_square_hue_ring.png)
-
-### HS Circle
-
-A color wheel: the angle sets the **hue** and the distance from the center sets the **saturation**. Use the V slider to change the brightness.
-
-![HS Circle](docs/images/hs_circle.png)
-
-### Hex code
-
-Turn on *Show Hex* to show the current color as a hexadecimal code (for example `#d85914`) under the sliders.
-
-![SV Square with hex code](docs/images/sv_square_hex.png)
-
-### Weight Paint
-
-In Weight Paint mode the picker is a single **weight bar**: a blue-to-red gradient from 0.0 to 1.0, with the current value shown in the middle. Click or drag along it to set the brush weight.
-
-![Weight Paint bar](docs/images/weight_paint.png)
+| Layout | How it works | |
+| --- | --- | --- |
+| **SV Square** (default) | A square where the horizontal axis is **saturation** and the vertical axis is **value** (brightness). Use the H slider to change the hue. | <img src="docs/images/sv_square.png" width="320" alt="SV Square"> |
+| **SV+H Square & Ring** | The same saturation/value square, inside a **hue ring**. Drag around the ring to change the hue and inside the square to set saturation and value, without using the sliders. | <img src="docs/images/sv_square_hue_ring.png" width="320" alt="SV+H Square and Ring"> |
+| **HS Circle** | A color wheel: the angle sets the **hue** and the distance from the center sets the **saturation**. Use the V slider to change the brightness. | <img src="docs/images/hs_circle.png" width="320" alt="HS Circle"> |
+| **Hex code** | Turn on *Show Hex* to show the current color as a hexadecimal code (for example `#d85914`) under the sliders. Works with any layout. | <img src="docs/images/sv_square_hex.png" width="320" alt="SV Square with hex code"> |
+| **Weight Paint** | In Weight Paint mode the picker is a single **weight bar**: a blue-to-red gradient from 0.0 to 1.0, with the current value in the middle. Click or drag along it to set the brush weight. | <img src="docs/images/weight_paint.png" width="320" alt="Weight Paint bar"> |
 
 ## Settings
 
 The settings are in the 3D Viewport sidebar (`N`), under *Paint > Color Picker*, while you are in a paint mode. The same options are also in the add-on's preferences.
 
-![Color Picker sidebar panel](docs/images/sidebar_panel.png)
+<img src="docs/images/sidebar_panel.png" width="252" alt="Color Picker sidebar panel">
 
 | Setting | What it does |
 | --- | --- |
@@ -94,6 +68,18 @@ The settings are in the 3D Viewport sidebar (`N`), under *Paint > Color Picker*,
 | Screen DPI | Scales the picker's text and widgets. Raise it on high-resolution screens. |
 | Scale Factor | Extra size multiplier for the picker (0.5–2), applied on top of Screen DPI. Only in the add-on's preferences. |
 | Show Hex | Shows the color's hex code in the picker. |
+
+## ❤️ Support the developer
+
+[![Support the developer](docs/images/support.png)](https://superhivemarket.com/products/color-picker)
+
+<div align="center">
+
+### Thanks to your support, Color Picker stays **open, free and public**.<br>If it saves you time, please consider getting it on Superhive or Payhip: every purchase directly funds its development and future Blender updates.
+
+<a href="https://superhivemarket.com/products/color-picker"><img src="https://img.shields.io/badge/Get%20it%20on-Superhive-ff6a00?style=for-the-badge&logo=blender&logoColor=white" alt="Get Color Picker on Superhive" width="360"></a>&nbsp;&nbsp;<a href="https://payhip.com/b/gZ6F4"><img src="https://img.shields.io/badge/Get%20it%20on-Payhip-5c6ac4?style=for-the-badge&logoColor=white" alt="Get Color Picker on Payhip" width="300"></a>
+
+</div>
 
 ## License
 
