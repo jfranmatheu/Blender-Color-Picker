@@ -35,7 +35,7 @@ Builds for Blender 2.93, 3.x and 4.x are in the [`releases`](releases) folder. T
 
 ## Installation
 
-1. Download the zip from the [latest release](https://github.com/jfranmatheu/Blender-Color-Picker/releases/latest), or from your [Superhive](https://superhivemarket.com/products/color-picker) or [Payhip](https://payhip.com/b/gZ6F4) purchase. It's the same add-on everywhere.
+1. Download the zip from the [latest release](https://github.com/jfranmatheu/Blender-Color-Picker/releases/latest), or from your [Superhive](https://superhivemarket.com/products/color-picker) purchase. It's the same add-on everywhere.
 2. In Blender, go to *Edit > Preferences > Get Extensions*.
 3. Open the menu in the top-right corner, choose *Install from Disk…* and select the zip. You can also drag and drop the zip into Blender.
 
@@ -179,4 +179,4 @@ The zip is written to the `dist` folder.
 
 - **Questions and troubleshooting:** see the [FAQ](FAQ.md).
 - **Bugs:** open an issue on [GitHub](https://github.com/jfranmatheu/Blender-Color-Picker/issues). Include your Blender version, your operating system, the paint mode, and any error from Blender's system console.
-- **Support development:** Color Picker is free and open source. If it saves you time, you can support it on [Superhive](https://superhivemarket.com/products/color-picker) or [Payhip](https://payhip.com/b/gZ6F4). Thank you! ♥
+- **Support development:** Color Picker is free and open source. If it saves you time, you can support it on [Superhive](https://superhivemarket.com/products/color-picker). Thank you! ♥

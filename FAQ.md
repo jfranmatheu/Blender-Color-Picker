@@ -6,12 +6,11 @@
 
 Yes. Color Picker is free and open source under the GPL-3.0 license, the same family of license as Blender. You can download it from the [latest GitHub release](https://github.com/jfranmatheu/Blender-Color-Picker/releases/latest), use it in personal and commercial work, study the code and share it.
 
-### Then why is it sold on Superhive and Payhip?
+### Then why is it sold on Superhive?
 
 Buying it is how you support its development. Color Picker is made by one independent developer, and every new Blender version can break add-ons. Purchases pay for updates, bug fixes and new features, and keep the add-on free for everyone, including students, hobbyists and artists who can't pay for tools right now.
 
-- [Get it on Superhive](https://superhivemarket.com/products/color-picker)
-- [Get it on Payhip](https://payhip.com/b/gZ6F4)
+[Get it on Superhive](https://superhivemarket.com/products/color-picker)
 
 ### Is the store version different from the GitHub version?
 

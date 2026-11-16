@@ -75,9 +75,9 @@ The settings are in the 3D Viewport sidebar (`N`), under *Paint > Color Picker*,
 
 <div align="center">
 
-### Thanks to your support, Color Picker stays **open, free and public**.<br>If it saves you time, please consider getting it on Superhive or Payhip: every purchase directly funds its development and future Blender updates.
+### Thanks to your support, Color Picker stays **open, free and public**.<br>If it saves you time, please consider getting it on Superhive: every purchase directly funds its development and future Blender updates.
 
-<a href="https://superhivemarket.com/products/color-picker"><img src="https://img.shields.io/badge/Get%20it%20on-Superhive-ff6a00?style=for-the-badge&logo=blender&logoColor=white" alt="Get Color Picker on Superhive" width="360"></a>&nbsp;&nbsp;<a href="https://payhip.com/b/gZ6F4"><img src="https://img.shields.io/badge/Get%20it%20on-Payhip-5c6ac4?style=for-the-badge&logoColor=white" alt="Get Color Picker on Payhip" width="300"></a>
+<a href="https://superhivemarket.com/products/color-picker"><img src="https://img.shields.io/badge/Get%20it%20on-Superhive-ff6a00?style=for-the-badge&logo=blender&logoColor=white" alt="Get Color Picker on Superhive" width="360"></a>
 
 </div>
 
@@ -85,7 +85,7 @@ The settings are in the 3D Viewport sidebar (`N`), under *Paint > Color Picker*,
 
 The complete reference, including recent colors, hotkeys and how the picker is sized, is in the [documentation](DOCS.md).
 
-Questions about installing, hotkeys, compatibility or why it's sold on Superhive and Payhip? See the [FAQ](FAQ.md).
+Questions about installing, hotkeys, compatibility or why it's sold on Superhive? See the [FAQ](FAQ.md).
 
 ## License
 

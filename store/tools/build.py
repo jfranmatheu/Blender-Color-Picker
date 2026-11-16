@@ -1,4 +1,4 @@
-"""Build the installable Color Picker zip for the stores (Superhive, Payhip).
+"""Build the installable Color Picker zip for Superhive.
 
 Uses Blender's own extension builder, so the zip is exactly what Blender
 expects to install. Output goes to store/build/, which git ignores.
