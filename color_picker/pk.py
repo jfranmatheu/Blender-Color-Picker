@@ -20,7 +20,11 @@ FACTOR_NUM_CHAR = 0.185  # 6666
 
 class Colpk(object):
     def invoke(self, context, event):
-        self.init(context)
+        # Open the picker centered on the mouse (clamped to the region in init_ui).
+        self.mouse_region = (event.mouse_region_x, event.mouse_region_y)
+        ret = self.init(context)
+        if ret is not None:
+            return ret
         return self.mod.start(context)
 
     def init_cursor(self, context):
@@ -38,8 +42,8 @@ class Colpk(object):
             self.paint = context.tool_settings.weight_paint
         brush = self.paint.brush
         if not brush:
-            self.finish(context)
-            return {'FINISHED'}
+            # Nothing to edit; the picker UI was never created, so don't call finish().
+            return {'CANCELLED'}
         self.brush = brush
         # Blender 5.0+: unified settings live on each Paint mode.
         self.ups = getattr(self.paint, 'unified_paint_settings', None) or context.tool_settings.unified_paint_settings
@@ -112,6 +116,17 @@ class Colpk(object):
 
         _w_2 = int(_width / 2)
         _h_2 = int(_heigth / 2)
+
+        # Center on the mouse, but keep the whole picker inside the region.
+        mouse = getattr(self, 'mouse_region', None)
+        if mouse is not None:
+            margin = 8
+            def clamp(v, half, size):
+                lo, hi = half + margin, size - half - margin
+                if lo > hi:  # Region smaller than the picker: keep it centered.
+                    return int(size / 2)
+                return int(min(max(v, lo), hi))
+            reg_center = Vector((clamp(mouse[0], _w_2, reg.width), clamp(mouse[1], _h_2, reg.height)))
 
         xi = reg_center.x - _w_2
         xf = reg_center.x + _w_2

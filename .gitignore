@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Store builds (made by store/tools/build.py)
+store/build/

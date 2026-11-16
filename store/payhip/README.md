@@ -6,9 +6,15 @@ Product page: https://payhip.com/b/gZ6F4
 
 Color Picker for Blender
 
-## File to deliver
+## Build
 
-- `ColorPicker_v1.3.0_Blender_5.3.zip` (the same zip as on GitHub, so buyers get the add-on directly too)
+Build the zip to upload to the store with:
+
+```bash
+python store/tools/build.py
+```
+
+It writes `store/build/ColorPicker_v<version>_Blender_5.0+.zip` (git ignores that folder). Upload that zip as the product file.
 
 ## Images (upload in this order)
 
