@@ -12,11 +12,11 @@ Color Picker for Blender
 
 ## Images (upload in this order)
 
-1. `payhip/01_cover.png` (cover / thumbnail)
-2. `payhip/02_free-download.png`
-3. `payhip/03_support.png`
-4. `payhip/04_layouts.png`
-5. `payhip/05_features.png`
+1. `images/01_cover.png` (cover / thumbnail)
+2. `images/02_free-download.png`
+3. `images/03_support.png`
+4. `images/04_layouts.png`
+5. `images/05_features.png`
 
 ## Description (paste into Payhip)
 
