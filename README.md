@@ -4,7 +4,7 @@
 
 <div align="center">
 
-**[⬇️ Download the latest release](https://github.com/jfranmatheu/Blender-Color-Picker/releases/latest)** · **[📖 Docs](DOCS.md)** · **[❓ FAQ](FAQ.md)** · **[❤️ Support the developer](#️-support-the-developer)**
+**[⬇️ Download the latest release](https://github.com/jfranmatheu/Blender-Color-Picker/releases/latest)** · **[🌐 Website & live demo](https://jfranmatheu.github.io/Blender-Color-Picker/)** · **[📖 Docs](DOCS.md)** · **[❓ FAQ](FAQ.md)** · **[❤️ Support the developer](#️-support-the-developer)**
 
 </div>
 

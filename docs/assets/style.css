@@ -365,9 +365,9 @@ input[type="range"]::-moz-range-thumb { width: 14px; height: 14px; border-radius
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
 /* ---------- Reveal on scroll ---------- */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-.reveal.in { opacity: 1; transform: none; }
-.no-js .reveal { opacity: 1; transform: none; }
+/* Only hide before reveal when JS is running, so content is never lost without it. */
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.js .reveal.in { opacity: 1; transform: none; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {

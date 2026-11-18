@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <script>
+  document.documentElement.classList.add('js');
   // Apply the saved theme before first paint to avoid a flash.
   try { const t = localStorage.getItem('cp-theme'); if (t) document.documentElement.dataset.theme = t;
         else if (matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.dataset.theme = 'light'; } catch (e) {}
